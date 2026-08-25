@@ -1,0 +1,36 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ai-watermark-platform
+  servlet:
+    multipart:
+      max-file-size: 15MB
+      max-request-size: 20MB
+  datasource:
+    url: jdbc:mysql://localhost:3306/watermark_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+#  jwt:
+#    refresh-expiration: 604800000
+fastapi:
+  enabled: false
+  base-url: http://localhost:8000
+  endpoints:
+    detect-text: /api/v1/detect/text
+    detect-image: /api/v1/detect/image
+  timeout-seconds: 15
+
+app:
+  tokens:
+    text-cost: 1
+    image-cost: 5

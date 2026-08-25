@@ -1,0 +1,91 @@
+# =========================================================
+# Environment / Secrets
+# =========================================================
+.env
+.env.*
+!.env.example
+
+# API keys / credentials
+*.key
+*.pem
+*.p12
+*.jks
+secrets/
+credentials/
+
+# =========================================================
+# Frontend - Node / React / Vite
+# =========================================================
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Frontend environment files
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# npm logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# =========================================================
+# Backend - Java / Spring Boot
+# =========================================================
+backend/target/
+backend/.mvn/timing.properties
+
+# Java compiled files
+*.class
+
+# Spring local configuration containing secrets
+backend/src/main/resources/application-local.properties
+backend/src/main/resources/application-local.yml
+
+# =========================================================
+# Backend - Python / FastAPI
+# =========================================================
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.pyc
+backend/**/*.pyc
+
+backend/.venv/
+backend/venv/
+backend/env/
+
+# Python environment files
+backend/.env
+backend/.env.*
+
+# =========================================================
+# IDE
+# =========================================================
+.idea/
+*.iml
+
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# =========================================================
+# OS
+# =========================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================================================
+# Logs
+# =========================================================
+*.log
+
+# =========================================================
+# Temporary files
+# =========================================================
+*.tmp
+*.temp
+*.swp
+*.bak
