@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
 
-function Input({placeholder,text,onChange}){
-    return(
-        <input className='bg-gray-800' placeholder={placeholder} value={text} onChange={onChange} />
-    )
+function Input({ type, placeholder, value, onChange, required=true, autoComplete,minlength }) {
+  return (
+    <input
+
+      className="bg-gray-800"
+      type={type}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+      required={required}
+      autoComplete={autoComplete}
+      minLength={minlength}
+
+    />
+  );
 }
 
-export f
+export default Input;
