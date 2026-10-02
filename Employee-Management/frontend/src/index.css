@@ -1,0 +1,915 @@
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 60px; 
+    background: #f9f9f9; /* optional */
+}
+
+
+
+.landing-header {
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 40px; /* space between header and role cards */
+}
+
+.role-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px; 
+    flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+.role-card {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    padding: 20px;
+    width: 250px;
+    min-height: 200px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.role-card h2 {
+    margin-bottom: 10px;
+}
+
+.role-card p {
+    margin-bottom: 20px;
+}
+
+.role-card button {
+    padding: 10px 20px;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.role-card button:hover {
+    background: #0056b3;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f4f4f4; 
+}
+
+.login-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 350px;
+    text-align: center;
+    position: relative;
+}
+
+.back-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: #007bff; 
+}
+
+.login-card h1 {
+    margin-top: 40px; 
+    margin-bottom: 10px;
+}
+
+.login-card p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%; 
+    max-width: 280px; 
+    padding: 10px;
+    border: 2px solid #333; 
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #007bff; 
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.login-card button[type="submit"] {
+    width: 100%;
+    max-width: 280px;
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.login-card button[type="submit"]:hover {
+    background: #0056b3;
+}
+
+.sidebar {
+    width: 240px;
+    background: #1f1f1f;
+    color: #fff;
+    height: 100vh;          
+    display: flex;
+    flex-direction: column;
+    position: fixed;        
+    top: 0;
+    left: 0;
+}
+
+.sidebar-title {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+
+.sidebar nav {
+    flex: 1;                
+    overflow-y: auto;       
+    padding: 20px 10px;
+}
+
+
+.sidebar nav::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar nav::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+.sidebar nav::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+.sidebar-link {
+    display: block;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: #ddd;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-link:hover {
+    background: #333;
+    color: #fff;
+}
+
+.sidebar-link.active {
+    background: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+.sidebar-group {
+    margin-bottom: 20px;
+}
+
+.sidebar-group-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    color: #ddd;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-group-title:hover {
+    background: #333;
+    color: #fff;
+}
+
+.sidebar-submenu {
+    margin-top: 8px;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-sub-link {
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #bbb;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-sub-link:hover {
+    background: #444;
+    color: #fff;
+}
+
+.sidebar-sub-link.active {
+    background: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+.dashboard-layout{
+    display: flex;
+    margin-left: 240px; 
+}
+
+.dashboard-main {
+    flex: 1;
+}
+.main-content {
+      /* offset for sidebar */
+    padding: 20px;
+    flex: 1;
+}
+
+/* Table container */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+/* Base table styling */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+/* Header cells */
+.data-table th {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  max-width: 150px;  
+}
+
+/* Body cells */
+.data-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  max-width: 150px;   
+  word-wrap: break-word;   
+  white-space: normal;    
+}
+
+/* Row hover effect */
+.data-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Status badge styling */
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Card wrapper */
+.card {
+  padding: 20px;
+  border-radius: 8px;
+  background: #fafafa;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+/* Container for each card */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+/* Section heading */
+.card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+/* Profile info container */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+} 
+
+/* Each field row */
+.profile-field {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Label styling */
+.profile-field span {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Value styling */
+.profile-field strong {
+  font-weight: normal; 
+  color: #555;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navbar {
+    height: 70px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.role-badge {
+    font-weight: bold;
+}
+
+.dashboard-content {
+    padding: 30px;
+}
+
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    margin-bottom: 5px;
+}
+
+.dashboard-header p {
+    margin: 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.stat-card h3 {
+    margin: 0 0 10px;
+    font-size: 15px;
+}
+
+.stat-card p {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+@media (max-width: 1000px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    margin-bottom: 5px;
+}
+
+.page-header p {
+    margin: 0;
+}
+
+.employee-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.employee-table th,
+.employee-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.employee-table th {
+    font-weight: bold;
+}
+
+.employee-form {
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.error-message {
+    grid-column: 1 / -1;
+}
+
+.attendance-form-card,
+.attendance-table-card {
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.attendance-form-card h2,
+.attendance-table-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.attendance-form {
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.attendance-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.attendance-form input,
+.attendance-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.attendance-form .form-actions {
+    grid-column: 1 / -1;
+}
+
+.attendance-form button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.attendance-form button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.success-message {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background: #e8f5e9;
+}
+
+.error-message {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background: #ffebee;
+}
+
+.table-header {
+    margin-bottom: 20px;
+}
+
+.table-header p {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+
+    .attendance-form {
+        grid-template-columns: 1fr;
+    }
+
+    .attendance-form .form-actions {
+        grid-column: auto;
+    }
+}
+.attendance-control-card {
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.attendance-control-card .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    max-width: 400px;
+}
+
+.attendance-control-card select,
+.attendance-control-card input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.attendance-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.attendance-actions button,
+.monthly-filter button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.attendance-actions button:disabled,
+.monthly-filter button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.monthly-filter {
+    display: flex;
+    align-items: end;
+    gap: 20px;
+}
+
+.monthly-filter .form-group {
+    min-width: 180px;
+}
+
+@media (max-width: 700px) {
+
+    .monthly-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .monthly-filter .form-group {
+        width: 100%;
+    }
+
+    .attendance-actions {
+        flex-direction: column;
+    }
+}
+.leave-table-card {
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.leave-table-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.leave-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.leave-actions button {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.leave-actions button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.employee-info-card {
+    margin-top: 30px;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.employee-info-card h2 {
+    margin-bottom: 20px;
+}
+
+.employee-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.employee-info-grid div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.employee-info-grid span {
+    font-size: 13px;
+    color: #777;
+}
+
+.employee-info-grid strong {
+    font-size: 16px;
+}
+
+@media (max-width: 700px) {
+    .employee-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.attendance-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.attendance-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.attendance-filter {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.attendance-filter div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.attendance-filter select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.attendance-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance-table th,
+.attendance-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.success-message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.error-message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+
+    .attendance-actions {
+        flex-direction: column;
+    }
+
+    .attendance-filter {
+        flex-direction: column;
+    }
+}
+
+.salary-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.salary-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.salary-table th,
+.salary-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.salary-table th {
+    font-weight: bold;
+}
