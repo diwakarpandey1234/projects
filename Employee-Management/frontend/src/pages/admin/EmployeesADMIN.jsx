@@ -3,7 +3,7 @@ import DashboardLayout from "../../components/DashboardLayout";
 import {
     getAllEmployees,
     deleteEmployee
-} from "../../service/employeeService";
+} from "../../service/EmployeeService";
 
 const EmployeesADMIN = () => {
 
@@ -112,7 +112,7 @@ const EmployeesADMIN = () => {
             <div className="page-header">
                 <div>
                     <h1>Employees</h1>
-                    <p>View and manage organization employees</p>
+                    {/* <p>View and manage organization employees</p> */}
                 </div>
             </div>
 
@@ -196,12 +196,13 @@ const EmployeesADMIN = () => {
 
                                 ) : (
 
+                                    
                                     filteredEmployees.map((employee) => (
 
                                         <tr key={employee.id}>
 
                                             <td>
-                                                {employee.id}
+                                                {employee.employeeID}
                                             </td>
 
                                             <td>

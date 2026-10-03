@@ -59,7 +59,7 @@ const HRADMIN = () => {
                                 <tr>
                                     <th>ID</th>
                                     <th>Username</th>
-                                    <th>Role</th>
+                                    <th>Department</th>
                                 </tr>
                             </thead>
 
@@ -76,15 +76,15 @@ const HRADMIN = () => {
                                 ) : (
 
                                     hrUsers.map((user) => (
-                                        <tr key={user.id}>
+                                        <tr key={user.employeeID}>
 
-                                            <td>{user.id}</td>
+                                            <td>{user.employeeID}</td>
 
-                                            <td>{user.username}</td>
+                                            <td>{user.firstName} {user.lastName}</td>
 
                                             <td>
                                                 <span className="status-badge">
-                                                    {user.role}
+                                                    {user.departmentName}
                                                 </span>
                                             </td>
 

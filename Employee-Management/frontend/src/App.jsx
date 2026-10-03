@@ -25,6 +25,8 @@ import ProfileADMIN from "./pages/admin/ProfileADMIN";
 import EmployeesADMIN from "./pages/admin/EmployeesADMIN";
 import MyLeavesEMP from "./pages/employee/MyLeavesEMP";
 import MySalaryEMP from "./pages/employee/MySalaryEMP";
+import AddEmployeeADMIN from "./pages/admin/AddEmployeeADMIN";
+import AddHrADMIN from "./pages/admin/AddHrAdmin";
 
 
 
@@ -59,12 +61,28 @@ function App() {
               </RoleRoute>
             }
           />
+          <Route
+            path="/admin/hr/add"
+            element={
+              <RoleRoute role="ADMIN">
+                <AddHrADMIN />
+              </RoleRoute>
+            }
+          />
 
           <Route
             path="/admin/employees"
             element={
               <RoleRoute role="ADMIN">
                 <EmployeesADMIN />
+              </RoleRoute>
+            }
+          />
+          <Route
+            path="/admin/employees/add"
+            element={
+              <RoleRoute role="ADMIN">
+                <AddEmployeeADMIN />
               </RoleRoute>
             }
           />

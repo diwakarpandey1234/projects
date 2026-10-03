@@ -33,7 +33,7 @@ const AuditLogsADMIN = () => {
             <div className="page-header">
                 <div>
                     <h1>Audit Logs</h1>
-                    <p>Track system activities and changes</p>
+                    {/* <p>Track system activities and changes</p> */}
                 </div>
             </div>
 

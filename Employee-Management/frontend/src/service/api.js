@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "YOUR_API",
+    baseURL: "http://localhost:8083",
     headers: {
         "Content-Type": "application/json",
     },
@@ -46,7 +46,7 @@ api.interceptors.response.use(
 
             try {
                 const response = await axios.post(
-                    "YOUR_REFRESH_API",
+                    "http://localhost:8083/refresh",
                     {
                         refreshToken: refreshToken,
                     }

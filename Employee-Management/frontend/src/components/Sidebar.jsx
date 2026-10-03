@@ -18,6 +18,10 @@ const Sidebar = ({ role }) => {
                     {
                         label: "View HR",
                         path: "/admin/hr"
+                    },
+                    {
+                        label:"Add HR",
+                        path:"/admin/hr/add"
                     }
                 ]
             },
@@ -49,6 +53,7 @@ const Sidebar = ({ role }) => {
                     }
                 ]
             },
+            
 
             {
                 label: "Salaries",
