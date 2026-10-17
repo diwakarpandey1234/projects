@@ -11,7 +11,6 @@ import {
 const LeavesHR = () => {
 
     const [leaves, setLeaves] = useState([]);
-
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
@@ -20,8 +19,8 @@ const LeavesHR = () => {
         loadLeaves();
     }, []);
 
-    const loadLeaves = async () => {
 
+    const loadLeaves = async () => {
         try {
 
             setLoading(true);
@@ -111,9 +110,9 @@ const LeavesHR = () => {
 
                 <div>
                     <h1>Leave Management</h1>
-                    <p>
+                    {/* <p>
                         Review and manage employee leave requests
-                    </p>
+                    </p> */}
                 </div>
 
             </div>
@@ -153,7 +152,8 @@ const LeavesHR = () => {
                             <thead>
 
                                 <tr>
-                                    <th>Employee</th>
+                                    <th>Id</th>
+                                    <th>EmployeeId</th>
                                     <th>Leave Type</th>
                                     <th>Start Date</th>
                                     <th>End Date</th>
@@ -169,6 +169,10 @@ const LeavesHR = () => {
                                 {leaves.map((leave) => (
 
                                     <tr key={leave.id}>
+                                         
+                                         <td>
+                                            {leave.employeeId}
+                                        </td>
 
                                         <td>
                                             {leave.employee?.firstName}{" "}

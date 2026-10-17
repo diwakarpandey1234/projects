@@ -132,10 +132,10 @@ const EmployeesHR = () => {
 
                                 employees.map((employee) => (
 
-                                    <tr key={employee.id}>
+                                    <tr key={employee.employeeID}>
 
                                         <td>
-                                            {employee.id}
+                                            {employee.employeeID}
                                         </td>
 
                                         <td>

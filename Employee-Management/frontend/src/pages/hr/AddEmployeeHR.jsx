@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import DashboardLayout from "../../components/DashboardLayout";
-import { createEmployee } from "../../service/EmployeeService";
+import { registerHR } from "../../service/registerUser";
 import { getAllDepartments } from "../../service/departmentService";
 
 const AddEmployeeHR = () => {
@@ -12,14 +12,17 @@ const AddEmployeeHR = () => {
     const [departments, setDepartments] = useState([]);
 
     const [formData, setFormData] = useState({
+        username:"",
+        password:"",
         firstName: "",
         lastName: "",
         email: "",
         phone: "",
         designation: "",
         joiningDate: "",
+        role:"USER",
         status: "ACTIVE",
-        departmentId: ""
+        departmentName: ""
     });
 
     const [loading, setLoading] = useState(false);
@@ -60,12 +63,9 @@ const AddEmployeeHR = () => {
 
         try {
 
-            await createEmployee({
-                ...formData,
-                departmentId: Number(formData.departmentId)
-            });
-
-            navigate("/hr/employees");
+            console.log(formData);
+            await registerHR(formData);
+            navigate("/hr/employees/add");
 
         } catch (error) {
 
@@ -89,7 +89,7 @@ const AddEmployeeHR = () => {
 
                 <div>
                     <h1>Add Employee</h1>
-                    <p>Create a new employee record</p>
+                    {/* <p>Create a new employee record</p> */}
                 </div>
 
             </div>
@@ -98,6 +98,30 @@ const AddEmployeeHR = () => {
                 className="employee-form"
                 onSubmit={handleSubmit}
             >
+                <div className="form-group">
+                    <label>Username</label>
+
+                    <input
+                        type="text"
+                        name="username"
+                        value={formData.username}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label>Password</label>
+
+                    <input
+                        type="text"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+
 
                 <div className="form-group">
                     <label>First Name</label>
@@ -170,6 +194,19 @@ const AddEmployeeHR = () => {
                     />
                 </div>
 
+                {/* <div className="form-group">
+                    <label>Role</label>
+
+                    <select
+                        name="role"
+                        value={formData.role}
+                        onChange={handleChange}
+                    >
+                        <option value="HR">HR</option>
+                        <option value="ADMIN">ADMIN</option>
+                    </select>
+                </div> */}
+
                 <div className="form-group">
                     <label>Status</label>
 
@@ -187,8 +224,8 @@ const AddEmployeeHR = () => {
                     <label>Department</label>
 
                     <select
-                        name="departmentId"
-                        value={formData.departmentId}
+                        name="departmentName"
+                        value={formData.departmentName}
                         onChange={handleChange}
                         required
                     >
@@ -199,7 +236,7 @@ const AddEmployeeHR = () => {
                         {departments.map((department) => (
                             <option
                                 key={department.id}
-                                value={department.id}
+                                value={department.name}
                             >
                                 {department.name}
                             </option>
@@ -218,7 +255,7 @@ const AddEmployeeHR = () => {
                     <button
                         type="button"
                         onClick={() =>
-                            navigate("/hr/employees")
+                            navigate("/hr/employees/add")
                         }
                     >
                         Cancel

@@ -118,7 +118,7 @@ const AttendanceHR = () => {
             );
 
         } finally {
-
+            
             setLoading(false);
 
         }
@@ -142,6 +142,7 @@ const AttendanceHR = () => {
             setSuccess("Employee checked out successfully.");
 
             await loadAttendance(selectedEmployee);
+           
 
         } catch (err) {
 
@@ -153,7 +154,7 @@ const AttendanceHR = () => {
             );
 
         } finally {
-
+            
             setLoading(false);
 
         }
@@ -199,9 +200,9 @@ const AttendanceHR = () => {
 
                 <div>
                     <h1>Attendance Management</h1>
-                    <p>
+                    {/* <p>
                         Manage employee attendance
-                    </p>
+                    </p> */}
                 </div>
 
             </div>
@@ -240,8 +241,8 @@ const AttendanceHR = () => {
                         {employees.map((employee) => (
 
                             <option
-                                key={employee.id}
-                                value={employee.id}
+                                key={employee.employeeID}
+                                value={employee.employeeID}
                             >
                                 {employee.firstName}{" "}
                                 {employee.lastName}
@@ -383,7 +384,7 @@ const AttendanceHR = () => {
 
                                 {attendance.map((record) => (
 
-                                    <tr key={record.id}>
+                                    <tr key={record.employeeId}>
 
                                         <td>
                                             {record.date}

@@ -14,10 +14,12 @@ export const checkOut = async (employeeId) => {
     return response.data;
 };
 
+
 export const getAllAttendance = async () => {
     const response = await api.get("/attendance/all");
     return response.data;
 };
+
 
 export const getEmployeeAttendance = async (employeeId) => {
     const response = await api.get(
@@ -25,6 +27,7 @@ export const getEmployeeAttendance = async (employeeId) => {
     );
     return response.data;
 };
+
 
 export const getMonthlyAttendance = async (
     employeeId,

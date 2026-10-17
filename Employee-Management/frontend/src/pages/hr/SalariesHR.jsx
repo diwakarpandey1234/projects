@@ -16,7 +16,7 @@ const SalariesHR = () => {
     const [salaries, setSalaries] = useState([]);
 
     const [formData, setFormData] = useState({
-        employeeId: "",
+        employeeID: "",
         basic: "",
         bonus: "",
         deduction: "",
@@ -86,7 +86,7 @@ const SalariesHR = () => {
         setError("");
         setSuccess("");
 
-        if (!formData.employeeId) {
+        if (!formData.employeeID) {
             setError("Please select an employee.");
             return;
         }
@@ -96,7 +96,7 @@ const SalariesHR = () => {
             setLoading(true);
 
             const salaryData = {
-                employeeId: Number(formData.employeeId),
+                employeeID: Number(formData.employeeID),
                 basic: Number(formData.basic),
                 bonus: Number(formData.bonus),
                 deduction: Number(formData.deduction),
@@ -109,7 +109,7 @@ const SalariesHR = () => {
             setSuccess("Salary added successfully.");
 
             setFormData({
-                employeeId: "",
+                employeeID: "",
                 basic: "",
                 bonus: "",
                 deduction: "",
@@ -178,14 +178,14 @@ const SalariesHR = () => {
         }
     };
 
-    const getEmployeeName = (employeeId) => {
+    const getEmployeeName = (employeeID) => {
 
         const employee = employees.find(
-            (item) => item.id === employeeId
+            (item) => item.id === employeeID
         );
 
         if (!employee) {
-            return `Employee #${employeeId}`;
+            return `Employee #${employeeID}`;
         }
 
         return `${employee.firstName} ${employee.lastName || ""}`;
@@ -198,9 +198,9 @@ const SalariesHR = () => {
 
                 <div>
                     <h1>Salary Management</h1>
-                    <p>
+                    {/* <p>
                         Manage employee salary records
-                    </p>
+                    </p> */}
                 </div>
 
             </div>
@@ -233,8 +233,8 @@ const SalariesHR = () => {
                         <label>Employee</label>
 
                         <select
-                            name="employeeId"
-                            value={formData.employeeId}
+                            name="employeeID"
+                            value={formData.employeeID}
                             onChange={handleChange}
                             required
                         >
@@ -246,8 +246,8 @@ const SalariesHR = () => {
                             {employees.map((employee) => (
 
                                 <option
-                                    key={employee.id}
-                                    value={employee.id}
+                                    key={employee.employeeID}
+                                    value={employee.employeeID}
                                 >
                                     {employee.firstName}{" "}
                                     {employee.lastName || ""}
@@ -368,12 +368,12 @@ const SalariesHR = () => {
                                 <tr>
                                     <th>ID</th>
                                     <th>Employee</th>
-                                    <th>Basic</th>
+                                    {/*   <th>Basic</th>
                                     <th>Bonus</th>
-                                    <th>Deduction</th>
+                                    <th>Deduction</th> */}
                                     <th>Net Salary</th>
-                                    <th>Effective Date</th>
-                                    <th>Action</th>
+                                    {/* <th>Effective Date</th> */}
+                                    {/* <th>Action</th> */}
                                 </tr>
 
                             </thead>
@@ -394,7 +394,7 @@ const SalariesHR = () => {
                                             )}
                                         </td>
 
-                                        <td>
+                                        {/* <td>
                                             ₹{salary.basic}
                                         </td>
 
@@ -404,15 +404,15 @@ const SalariesHR = () => {
 
                                         <td>
                                             ₹{salary.deduction}
-                                        </td>
+                                        </td> */}
 
                                         <td>
                                             ₹{salary.netSalary}
                                         </td>
 
-                                        <td>
+                                        {/* <td>
                                             {salary.effectiveDate}
-                                        </td>
+                                        </td> */}
 
                                         <td>
 

@@ -27,6 +27,7 @@ import MyLeavesEMP from "./pages/employee/MyLeavesEMP";
 import MySalaryEMP from "./pages/employee/MySalaryEMP";
 import AddEmployeeADMIN from "./pages/admin/AddEmployeeADMIN";
 import AddHrADMIN from "./pages/admin/AddHrAdmin";
+import DepartmentsHR from "./pages/hr/DepartmentsHR";
 
 
 
@@ -176,6 +177,15 @@ function App() {
             element={
               <RoleRoute role="HR">
                 <AddEmployeeHR />
+              </RoleRoute>
+            }
+          />
+
+          <Route
+            path="/hr/departments"
+            element={
+              <RoleRoute role="HR">
+                <DepartmentsHR />
               </RoleRoute>
             }
           />

@@ -86,9 +86,22 @@ const Sidebar = ({ role }) => {
                 label: "Dashboard",
                 path: "/hr"
             },
-            {
+             {
                 label: "Employees",
-                path: "/hr/employees"
+                children: [
+                    {
+                        label: "View Employees",
+                        path: "/hr/employees"
+                    },
+                    {
+                        label: "Add Employee",
+                        path: "/hr/employees/add"
+                    }
+                ]
+            },
+            {
+                label: "Departments",
+                path: "/hr/departments"
             },
             {
                 label: "Attendance",
